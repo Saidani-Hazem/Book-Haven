@@ -1,0 +1,95 @@
+.bookslist {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  background-color: #d3c5e5;
+  gap: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-bottom: 20px;
+  
+}
+
+.load{
+  text-align: center;
+  margin-top:20%;
+  margin-bottom:30%;
+}
+
+.book h6{
+    font-size: 15px;
+}
+
+.langauth{
+  display: flex;
+  justify-content: space-between;
+}
+
+.book p{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.bookslist img {
+  text-align: center;
+  height:250px;
+}
+
+
+.bookimg {
+  text-align: center;
+  padding-top: 5px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  height:40px;
+  margin-top:40px;
+}
+
+.pagination Stack {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .bookslist {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    background-color: #d3c5e5;
+    gap: 5px;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+
+  .book {
+    width: 175px;
+    height: 280px;
+  }
+
+.book h6{
+    font-size: 12px;
+}
+
+.book p{
+    font-size: 11px;
+    font-weight: 400;
+}
+
+  .bookslist img {
+    width: 100px;
+    height: 140px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .bookslist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

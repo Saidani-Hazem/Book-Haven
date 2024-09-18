@@ -1,0 +1,49 @@
+.ftrlists{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-content: space-around;
+    padding-bottom:20px;
+}
+
+
+
+.ftrelem{
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.ftrelem h4{
+    font-family:"Roboto";
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.ftrelem h6{
+    margin-top:5px;
+    font-family:"Roboto";
+    font-weight:small;
+}
+
+.me{
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top:10px;
+    font-family:"Roboto";
+    font-weight:small;
+}
+
+.ftrelem div{
+    margin-top:30px;
+}
+
+@media (max-width: 600px) {
+
+    .ftrlists{
+        
+        grid-template-columns: repeat(2,1fr);
+        
+    }
+
+}
+
