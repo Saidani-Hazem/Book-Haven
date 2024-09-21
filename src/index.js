@@ -6,11 +6,16 @@ import "./App.css"
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/home";
+import Saved from "./pages/saved";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/saved",
+    element: <Saved/>,
   },
 ]);
 

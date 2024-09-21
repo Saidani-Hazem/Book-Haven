@@ -9,10 +9,14 @@ import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import IconButton from '@mui/material/IconButton'
 import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 import Typography from '@mui/material/Typography'
-
-
-
-
+import GradeTwoToneIcon from '@mui/icons-material/GradeTwoTone';
+import SearchTwoToneIcon from '@mui/icons-material/SearchTwoTone';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import InfoIcon from '@mui/icons-material/Info';
+import "./MobileDrawer.css"
+import { useState} from 'react';
+import { Link } from "react-router-dom";
+import HomeIcon from '@mui/icons-material/Home';
 
 const drawerBleeding = 56;
 
@@ -27,7 +31,7 @@ const Root = styled('div')(({ theme }) => ({
 
 export default function MobileDrawer(props) {
   const { window } = props;
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -81,6 +85,44 @@ export default function MobileDrawer(props) {
 <IconButton aria-label="">
   <LocalLibraryIcon/>
 </IconButton>
+
+
+<div className='navitems'>
+
+  <Link to="/saved">
+    <IconButton aria-label="">
+      <p>saved</p>
+    <GradeTwoToneIcon fontSize='medium'/>
+    </IconButton>
+  </Link>
+  
+  <IconButton aria-label="" >
+    <p>search</p>
+  <SearchTwoToneIcon fontSize='medium'/>
+  </IconButton>
+
+
+
+  <Link to="/">
+  <IconButton aria-label="" >
+  <p>Home</p>
+  <HomeIcon fontSize='medium'/>
+  </IconButton>
+  </Link>
+
+
+  <IconButton aria-label="" >
+  <p>Mode</p>
+  <LightModeIcon fontSize='medium'/>
+  </IconButton>
+
+  <IconButton aria-label="" >
+  <p>About</p>
+  <InfoIcon fontSize='medium'/>
+  </IconButton>
+
+
+</div>
 
 
       </SwipeableDrawer>

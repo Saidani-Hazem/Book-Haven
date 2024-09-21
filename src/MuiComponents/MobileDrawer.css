@@ -1,0 +1,21 @@
+.navitems{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+.navitems p{
+    font-size:20px;
+    margin-right:3px;
+}
+
+
+@media (max-width: 600px) {
+
+    .navitems p{
+        display: none;
+    }
+
+}
