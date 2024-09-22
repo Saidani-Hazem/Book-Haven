@@ -96,11 +96,12 @@ export default function MobileDrawer(props) {
     </IconButton>
   </Link>
   
+  <Link to="/search">
   <IconButton aria-label="" >
     <p>search</p>
   <SearchTwoToneIcon fontSize='medium'/>
   </IconButton>
-
+  </Link>
 
 
   <Link to="/">

@@ -41,12 +41,17 @@ function savebook(obj) {
 }
 
 const MuiModal = ({ open, handleClose, books, id, save }) => {
+
+if(!books){
+  return (<div></div>)
+}else{
+
   const book = books.find((book) => book.id === id);
 
   if (!book) {
     return null;
   } else {
-    console.log(book);
+    
     return (
       <div>
         <Modal
@@ -182,5 +187,5 @@ const MuiModal = ({ open, handleClose, books, id, save }) => {
       </div>
     );
   }
-};
+}};
 export default MuiModal;

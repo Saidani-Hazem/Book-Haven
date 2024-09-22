@@ -7,6 +7,7 @@ import "./App.css"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/home";
 import Saved from "./pages/saved";
+import Search from "./pages/search";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/saved",
     element: <Saved/>,
+  },
+  {
+    path: "/search",
+    element: <Search/>,
   },
 ]);
 

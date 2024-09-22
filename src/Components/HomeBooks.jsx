@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Box from "@mui/material/Box";
-import CircularProgress from "@mui/material/CircularProgress";
+import { Box, CircularProgress } from "@mui/material";
 import Card from "@mui/material/Card";
 import PersonTwoToneIcon from "@mui/icons-material/PersonTwoTone";
 import CardContent from "@mui/material/CardContent";
@@ -45,7 +44,7 @@ const HomeBooks = () => {
     }
 
     return books.map((book, index) => (
-      <Card className="book" sx={{ mt: 2 }}>
+      <Card key={book.id} className="book" sx={{ mt: 2 }}>
         <div className="bookimg">
           <img
             key={book.id}
@@ -118,7 +117,7 @@ const HomeBooks = () => {
     <div>
       {booksRender() === false ? (
         <Box className="load" sx={{ width: "100%" }}>
-          <CircularProgress color="success" />
+          <CircularProgress color="success" size={"large"}/>
         </Box>
       ) : (
         <div className="bookslist">{booksRender()}</div>
@@ -127,7 +126,7 @@ const HomeBooks = () => {
       <div className="pagination">
         <Stack spacing={2}>
           <Pagination
-            count={100}
+            count={200}
             color="secondary"
             page={page}
             onChange={changePage}
