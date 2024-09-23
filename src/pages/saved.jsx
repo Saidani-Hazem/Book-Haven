@@ -12,7 +12,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import MuiModal from "../MuiComponents/MuiModal.jsx";
 import BookmarkRemoveIcon from "@mui/icons-material/BookmarkRemove";
 import Box from "@mui/material/Box";
-
+import BookmarkIcon from "@mui/icons-material/Bookmark";
 
 const Saved = () => {
   const [open, setOpen] = useState(false);
@@ -32,6 +32,12 @@ const Saved = () => {
   return (
     <>
       <MobileDrawer />
+
+      <div className="savedlabel">
+        <BookmarkIcon fontSize="medium" />
+        <h4>Saved Book</h4>
+      </div>
+
       <div className="bookslist">
         {data && data.length > 0 ? (
           data.map((book, index) => (
@@ -96,8 +102,6 @@ const Saved = () => {
           ))
         ) : (
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-
-
             <Box className="nosaved" sx={{ width: "100%" }}>
               <h4>No Saved Book</h4>
 

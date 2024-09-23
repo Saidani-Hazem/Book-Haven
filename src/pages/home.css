@@ -11,3 +11,16 @@
     margin-top:20%;
     margin-bottom:30%;
 }
+
+.savedlabel{
+    display: flex;
+    margin-left:10%;
+    align-content: center;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.savedlabel h4{
+    font-family: "Roboto";
+    margin-top:0px;
+}

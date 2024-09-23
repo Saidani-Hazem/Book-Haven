@@ -126,7 +126,7 @@ const HomeBooks = () => {
       <div className="pagination">
         <Stack spacing={2}>
           <Pagination
-            count={200}
+            count={100}
             color="secondary"
             page={page}
             onChange={changePage}

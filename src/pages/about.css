@@ -1,0 +1,67 @@
+.aboutlogo{
+   width:100px;
+   height:100px;
+    border-radius:50%;
+    text-align: center;
+}
+
+.divlogo{
+    text-align: center;
+    width:100%;
+    background-color: #ffff ;
+    margin-top:100px;
+    margin-bottom:150px;
+}
+
+.divlogo p{
+    width:100%;
+    text-align: center;
+    padding-left:30%;
+    padding-right:30%;
+    margin-top:20px;
+}
+
+@media (max-width:600px){
+
+    .divlogo p{
+        
+        padding-left:10%;
+        padding-right:10%;
+        margin-top:10px;
+    }
+
+    .divlogo{
+        
+        margin-top:40px;
+        margin-bottom:30px;
+    }
+
+
+}
+
+
+@media (min-width: 601px) and (max-width: 1000px) {
+
+
+
+    .divlogo p{
+        
+        padding-left:20%;
+        padding-right:20%;
+        margin-top:10px;
+    }
+
+    .divlogo{
+        
+        margin-top:40px;
+        margin-bottom:30px;
+    }
+
+
+
+
+
+
+
+
+}

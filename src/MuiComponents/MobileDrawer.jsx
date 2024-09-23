@@ -117,11 +117,12 @@ export default function MobileDrawer(props) {
   <LightModeIcon fontSize='medium'/>
   </IconButton>
 
+<Link to="/about">
   <IconButton aria-label="" >
   <p>About</p>
   <InfoIcon fontSize='medium'/>
   </IconButton>
-
+  </Link>
 
 </div>
 

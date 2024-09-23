@@ -39,7 +39,7 @@ const Search = () => {
         const response = await axios.get(
           `https://gutendex.com/books/?page=${page}`
         );
-        console.log(`fetch ${page}`);
+
         result.push(...response.data.results);
       }
       setAllBooks(result);
@@ -93,13 +93,21 @@ const Search = () => {
             {book.subjects[0]?.substring(0, 32)}
           </Typography>
           <Typography variant="body2" className="mobileinfos">
-            <PersonTwoToneIcon sx={{ justifyContent: "center", mr: 1 }} color="primary" fontSize="small" />
+            <PersonTwoToneIcon
+              sx={{ justifyContent: "center", mr: 1 }}
+              color="primary"
+              fontSize="small"
+            />
             {book.authors?.[0]?.name || "Unknown Author"}
           </Typography>
           <div className="langauth">
             <div>
               <Typography variant="body2" className="mobileinfos">
-                <LanguageIcon sx={{ justifyContent: "center", mr: 1 }} color="primary" fontSize="small" />
+                <LanguageIcon
+                  sx={{ justifyContent: "center", mr: 1 }}
+                  color="primary"
+                  fontSize="small"
+                />
                 {book.languages}
               </Typography>
             </div>
@@ -133,7 +141,7 @@ const Search = () => {
       <MobileDrawer />
       <div>
         <div className="inptsearch">
-        <form className="form">
+          <form className="form">
             <label htmlFor="search">
               <input
                 className="input"
