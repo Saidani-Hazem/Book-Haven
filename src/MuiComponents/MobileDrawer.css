@@ -10,7 +10,10 @@
     font-size:20px;
     margin-right:3px;
 }
-
+.logo{
+    border-radius: 10px;
+    margin-right:5px;
+}
 
 @media (max-width: 600px) {
 

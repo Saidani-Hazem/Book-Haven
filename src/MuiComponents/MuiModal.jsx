@@ -12,6 +12,10 @@ import CakeIcon from "@mui/icons-material/Cake";
 import LanguageIcon from "@mui/icons-material/Language";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
+
+
+
+
 //model style
 const style = {
   textAlign: "center",
@@ -21,9 +25,9 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: "75%",
   height: "90%",
-  bgcolor: "#D3C5E5",
   boxShadow: 24,
   p: 2,
+  bgcolor:"rgba(128, 128, 128, 0.9)"
 };
 
 function savebook(obj) {
@@ -43,7 +47,7 @@ function savebook(obj) {
 const MuiModal = ({ open, handleClose, books, id, save }) => {
 
 if(!books){
-  return (<div></div>)
+  return (<></>)
 }else{
 
   const book = books.find((book) => book.id === id);
@@ -53,12 +57,13 @@ if(!books){
   } else {
     
     return (
-      <div>
+      <>
         <Modal
           open={open}
           onClose={handleClose}
           aria-labelledby="modal-modal-title"
           aria-describedby="modal-modal-description"
+          
         >
           <Box sx={style}>
             <IconButton
@@ -110,8 +115,8 @@ if(!books){
                       <PersonTwoToneIcon
                         className="mobileinfos"
                         sx={{ justifyContent: "center", mr: 1 }}
-                        color="primary"
-                        fontSize="small"
+                        color="#1976d2"
+                        fontSize="medium"
                       />
                       {book.authors && book.authors[0]
                         ? book.authors[0].name
@@ -119,8 +124,8 @@ if(!books){
                       <br />
                       <CakeIcon
                         sx={{ justifyContent: "center", mr: 1 }}
-                        color="primary"
-                        fontSize="small"
+                        color="#1976d2"
+                        fontSize="medium"
                       />
                       {book.authors && book.authors[0]
                         ? book.authors[0].birth_year + "   --   "
@@ -134,8 +139,8 @@ if(!books){
                     <Typography variant="body2" className="mobileinfos">
                       <LanguageIcon
                         sx={{ justifyContent: "center", mr: 1 }}
-                        color="primary"
-                        fontSize="small"
+                        color="#1976d2"
+                        fontSize="medium"
                       />
                       {book.languages}
                     </Typography>
@@ -184,7 +189,7 @@ if(!books){
             </div>
           </Box>
         </Modal>
-      </div>
+      </>
     );
   }
 }};

@@ -16,6 +16,10 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+
 
 const Search = () => {
   const [allBooks, setAllBooks] = useState([]);
@@ -25,7 +29,16 @@ const Search = () => {
   const [bookid, setBookid] = useState();
   const [loading, setLoading] = useState(false);
   const [area, setArea] = useState(1);
+  const [mode, setmode] = useState(localStorage.getItem("mode"));
 
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode || 'dark',
+      primary: {
+        main: '#1976d2',
+      },
+    },
+  });
   const handleChange = (event) => {
     setArea(event.target.value);
   };
@@ -66,6 +79,10 @@ const Search = () => {
       setFilteredBooks(filteredResults);
     }
   };
+  const bgmode = () => {
+    return localStorage.getItem("mode") === "light" ? "#d3c5e5" : "#121212";
+  };
+
 
   const booksRender = () => {
     if (filteredBooks.length === 0) {
@@ -95,7 +112,7 @@ const Search = () => {
           <Typography variant="body2" className="mobileinfos">
             <PersonTwoToneIcon
               sx={{ justifyContent: "center", mr: 1 }}
-              color="primary"
+              color="#1976d2"
               fontSize="small"
             />
             {book.authors?.[0]?.name || "Unknown Author"}
@@ -105,7 +122,7 @@ const Search = () => {
               <Typography variant="body2" className="mobileinfos">
                 <LanguageIcon
                   sx={{ justifyContent: "center", mr: 1 }}
-                  color="primary"
+                  color="#f48fb1"
                   fontSize="small"
                 />
                 {book.languages}
@@ -138,7 +155,9 @@ const Search = () => {
 
   return (
     <>
-      <MobileDrawer />
+    <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
+      <MobileDrawer setmode={setmode}/>
       <div>
         <div className="inptsearch">
           <form className="form">
@@ -208,7 +227,7 @@ const Search = () => {
           <CircularProgress color="success" size={"large"} />
         </Box>
       ) : (
-        <div className="bookslist">{booksRender()}</div>
+        <div className="bookslist" style={{backgroundColor:bgmode()}}>{booksRender()}</div>
       )}
       <MuiModal
         open={open}
@@ -218,6 +237,7 @@ const Search = () => {
         save={false}
       />
       <Footer />
+      </ThemeProvider>
     </>
   );
 };

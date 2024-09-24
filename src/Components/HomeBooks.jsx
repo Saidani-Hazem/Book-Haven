@@ -15,6 +15,7 @@ import MuiModal from "../MuiComponents/MuiModal"
 
 
 const HomeBooks = () => {
+
   const [books, setBooks] = useState([]);
   const [page, setpage] = useState(2);
 
@@ -37,14 +38,19 @@ const HomeBooks = () => {
     setpage(value);
     setBooks([]);
   };
-
+  const bgmode = () => {
+    return localStorage.getItem("mode") === "light" ? "#d3c5e5" : "#121212";
+  };
   const booksRender = () => {
     if (books.length === 0) {
       return false;
     }
-
+ 
+ 
+      
+     
     return books.map((book, index) => (
-      <Card key={book.id} className="book" sx={{ mt: 2 }}>
+      <Card key={book.id} className="book" sx={{ mt: 2}}>
         <div className="bookimg">
           <img
             key={book.id}
@@ -73,7 +79,7 @@ const HomeBooks = () => {
           <Typography variant="body2" className="mobileinfos">
             <PersonTwoToneIcon
               sx={{ justifyContent: "center", mr: 1 }}
-              color="primary"
+              color="#1976d2"
               fontSize="small"
             />
             {book.authors && book.authors[0]
@@ -86,7 +92,7 @@ const HomeBooks = () => {
               <Typography variant="body2" className="mobileinfos">
                 <LanguageIcon
                   sx={{ justifyContent: "center", mr: 1 }}
-                  color="primary"
+                  color="#1976d2"
                   fontSize="small"
                 />
                 {book.languages}
@@ -120,14 +126,14 @@ const HomeBooks = () => {
           <CircularProgress color="success" size={"large"}/>
         </Box>
       ) : (
-        <div className="bookslist">{booksRender()}</div>
+        <div className="bookslist" style={{backgroundColor:bgmode()}}>{booksRender()}</div>
       )}
 
       <div className="pagination">
         <Stack spacing={2}>
           <Pagination
             count={100}
-            color="secondary"
+            color="#7B1FA2"
             page={page}
             onChange={changePage}
             size="small"

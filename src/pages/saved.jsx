@@ -13,8 +13,26 @@ import MuiModal from "../MuiComponents/MuiModal.jsx";
 import BookmarkRemoveIcon from "@mui/icons-material/BookmarkRemove";
 import Box from "@mui/material/Box";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+
+
 
 const Saved = () => {
+  const [mode, setmode] = useState(localStorage.getItem("mode"));
+
+  const darkTheme = createTheme({
+    palette: {
+      mode: mode || 'dark',
+      primary: {
+        main: '#1976d2',
+      },
+    },
+  });
+    const bgmode = () => {
+      return localStorage.getItem("mode") === "light" ? "#d3c5e5" : "#121212";
+    };
+
   const [open, setOpen] = useState(false);
   const [bookid, setBookId] = useState(null);
   const [data, setData] = useState([]);
@@ -31,14 +49,16 @@ const Saved = () => {
 
   return (
     <>
-      <MobileDrawer />
+    <ThemeProvider theme={darkTheme}>
+    <CssBaseline />
+      <MobileDrawer setmode={setmode}/>
 
       <div className="savedlabel">
         <BookmarkIcon fontSize="medium" />
         <h4>Saved Book</h4>
       </div>
 
-      <div className="bookslist">
+      <div className="bookslist" style={{backgroundColor:bgmode()}}>
         {data && data.length > 0 ? (
           data.map((book, index) => (
             <Card className="book" sx={{ mt: 2 }} key={book.id}>
@@ -65,7 +85,7 @@ const Saved = () => {
                 <Typography variant="body2" className="mobileinfos">
                   <PersonTwoToneIcon
                     sx={{ justifyContent: "center", mr: 1 }}
-                    color="primary"
+                    color="#1976d2"
                     fontSize="small"
                   />
                   {book.authors && book.authors[0]
@@ -78,7 +98,7 @@ const Saved = () => {
                     <Typography variant="body2" className="mobileinfos">
                       <LanguageIcon
                         sx={{ justifyContent: "center", mr: 1 }}
-                        color="primary"
+                        color="#1976d2"
                         fontSize="small"
                       />
                       {book.languages}
@@ -118,7 +138,9 @@ const Saved = () => {
         save={true}
       />
       <Footer />
+      </ThemeProvider>
     </>
+    
   );
 };
 

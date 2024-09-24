@@ -34,7 +34,8 @@ const Footer = () => {
       </div>
 
       <div className="me">
-        <h5>&copy; Developed by Hazem Saidani</h5>
+      <h5>&copy; Developed <a href="https://www.linkedin.com/in/hazem-saidani-b87814271" target="_blank">By Hazem Saidani</a></h5>
+
   
 </div>
 
